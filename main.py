@@ -1,3 +1,8 @@
+#
+# Environement: python3.6 
+#
+#
+
 from sqlite_manager import SqliteManage
 
 
