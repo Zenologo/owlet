@@ -32,11 +32,10 @@ class SqliteManage:
             print(row)
     
     
-    def select_task_by_priority(self,  conn, priority):
+    def get_task_by_priority(self,  conn):
         """
         Query tasks by priority
         :param conn: the Connection object
-        :param priority:
         :return:
         """
         cur = conn.cursor()
