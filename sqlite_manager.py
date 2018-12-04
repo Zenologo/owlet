@@ -39,12 +39,13 @@ class SqliteManage:
         :return:
         """
         cur = conn.cursor()
-        cur.execute("SELECT name FROM sqlite_master WHERE type='table';")
+        cur.execute("SELECT name FROM sqlite_master WHERE type='table'")
         print(cur.fetchall())
         print('')
-        cur.execute("SELECT * FROM geckotask_parser; ")
-        rows = cur.fetchall()
+        cur.execute("SELECT * FROM geckotask_parser")
+        print(cur.fetchall())
         
+        rows = cur.fetchall()
         for row in rows:
             print(row)
         

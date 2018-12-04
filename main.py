@@ -1,15 +1,17 @@
 #
-# Environement: python3.6 
+# Environement: python3.6
 #
-#
+import configparser
 
 from sqlite_manager import SqliteManage
 
-
 def main():
+    cf = configparser.ConfigParser()
+    cf.read("conf.cfg")
+    print(cf.get("db_sqlite", "database"))
     
     sqlite = SqliteManage()
-    sqlite.database = "../hummingbird/db.sqlite3"
+    sqlite.database = cf.get("db_sqlite", "database")
     
     # create a database connection
     sqlite.conn = sqlite.create_connection()
